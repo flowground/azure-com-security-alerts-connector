@@ -1,0 +1,37 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{8}-([0-9A-Fa-f]{4}-){3}[0-9A-Fa-f]{12}$"
+        },
+        "ascLocation": {
+            "required": true,
+            "type": "string"
+        },
+        "alertName": {
+            "required": true,
+            "type": "string"
+        },
+        "alertUpdateActionType": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "Dismiss",
+                "Reactivate"
+            ]
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 90,
+            "pattern": "^[-\\w\\._\\(\\)]+$"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
